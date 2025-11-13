@@ -8,10 +8,14 @@ function addTask() {
   const taskList = document.getElementById('taskList');
   const li = document.createElement('li');
   li.textContent = taskInput.value;
+  
+  // Add delete button
+  const delBtn = document.createElement('button');
+  delBtn.textContent = "❌";
+  delBtn.onclick = () => li.remove();
+  li.appendChild(delBtn);
+  
   taskList.appendChild(li);
   taskInput.value = '';
   updateCounter();
 }
-
-	Edit index.html (add a counter)
-<h2 id="counter">Total Tasks: 0</h2>
